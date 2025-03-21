@@ -12,6 +12,14 @@ import torchvision.transforms as T
 import torch.nn.functional as F
 import torchvision.models as models
 
+def set_seed(seed=42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
 class MPIICsvDataset(Dataset):
 
     def __init__(self, csv_file, images_dir, is_train, transform, num_samples):
