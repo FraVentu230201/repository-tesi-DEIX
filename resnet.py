@@ -3,7 +3,6 @@ import csv
 import numpy as np
 from PIL import Image
 import random
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -19,6 +18,7 @@ def set_seed(seed=42):
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+
 
 class MPIICsvDataset(Dataset):
 
